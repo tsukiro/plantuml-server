@@ -13,7 +13,7 @@ RUN MAVEN_VERSION=3.5.2 && wget http://archive.apache.org/dist/maven/maven-3/$MA
 RUN mkdir /app
 
 # Download and add jetty
-RUN wget http://central.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.8.v20171121/jetty-distribution-9.4.8.v20171121.tar.gz -O - | tar xzf - && mv /work/jetty-distribution-9.4.8.v20171121 /jetty
+RUN wget https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.8.v20171121/jetty-distribution-9.4.8.v20171121.tar.gz -O - | tar xzf - && mv /work/jetty-distribution-9.4.8.v20171121 /jetty
 
 # Setup jetty configuration
 RUN cd /app && java -jar /jetty/start.jar --create-startd --add-to-start=http,deploy,webapp,jsp
